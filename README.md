@@ -1,4 +1,4 @@
-# mobile-ecom-design
+# mobile-ecom-design-rect
 Intial pages
 1. landing page 
 2. categories
