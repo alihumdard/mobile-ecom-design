@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-primary text-white px-2 py-3 shadow-md fixed w-full top-0 z-50">
+      <nav className="bg-primary text-white px-2 py-3 shadow-md w-full top-0 z-50">
         <div className="mx-4 flex flex-wrap items-center justify-between gap-4">
           {/* Left Section: Logo + Hamburger */}
           <div className="flex items-center gap-3">
