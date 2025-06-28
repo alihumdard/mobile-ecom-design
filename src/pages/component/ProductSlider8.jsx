@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { FaStar } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const ProductSlider = () => {
+const ProductSlider8 = () => {
   const products = [
     {
       title: "Infinix Zero flip",
@@ -15,7 +15,7 @@ const ProductSlider = () => {
       discount: "55% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-1.webp",
+      image: "/images/watch-1.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -24,7 +24,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-2.webp",
+      image: "/images/watch-2.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -33,7 +33,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-3.webp",
+      image: "/images/watch-3.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -42,7 +42,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-4.webp",
+      image: "/images/watch-4.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -51,7 +51,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-5.webp",
+      image: "/images/watch-5.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -60,7 +60,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-6.webp",
+      image: "/images/watch-6.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -69,7 +69,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-7.webp",
+      image: "/images/watch-7.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -78,7 +78,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-8.webp",
+      image: "/images/watch-8.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -87,7 +87,7 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-9.webp",
+      image: "/images/watch-9.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -96,32 +96,8 @@ const ProductSlider = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/sale-10.webp",
+      image: "/images/watch-10.webp",
     },
-  ];
-
-  const priceRanges = [
-    "Below Rs. 15,000",
-    "Rs. 15,000 - Rs. 25,000",
-    "Rs. 25,000 - Rs. 40,000",
-    "Rs. 40,000 - Rs. 60,000",
-    "Rs. 60,000 - Rs. 80,000",
-    "Rs. 80,000 - Rs. 100,000",
-    "Rs. 100,000 - Rs. 150,000",
-    "Above 150,000",
-  ];
-
-  const brands = [
-    { name: "Samsung", image: "/images/brand-1.svg", bg: "bg-[#000]" },
-    { name: "Infinix", image: "/images/brand-2.svg", bg: "bg-[#61FD00]" },
-    { name: "Oppo", image: "/images/brand-3.svg", bg: "bg-[#006B30]" },
-    { name: "Xiaomi", image: "/images/brand-4.svg", bg: "bg-[#FF6A00]" },
-    { name: "Vivo", image: "/images/brand-5.svg", bg: "bg-[#0074CD]" },
-    { name: "Tecno", image: "/images/brand-6.svg", bg: "bg-[#000000]" },
-    { name: "Realme", image: "/images/brand-7.svg", bg: "bg-[#FFD200]" },
-    { name: "Itel", image: "/images/brand-8.svg", bg: "bg-[#FD004D]" },
-    { name: "Apple", image: "/images/brand-9.svg", bg: "bg-[#0A0F17]" },
-    // { name: "Nokia", image: "/images/brand-10.svg", bg: "bg-[#0057FF]" },
   ];
 
   // Split products into chunks of 2 for 2 rows
@@ -131,9 +107,12 @@ const ProductSlider = () => {
   }
 
   return (
-    <div>
-      <div className="relative py-10 px-40 bg-[url('/images/bg-3.png')] bg-cover bg-center mt-10">
-        <div className="mb-6 text-end">
+    <div className="">
+      <div className="relative py-10 px-40 bg-[url('/images/bg-1.png')] bg-cover bg-center mt-10">
+        <div className="mb-6 flex justify-between">
+          <h1 className="text-white text-xl font-bold">
+           Latest Smart Watches
+          </h1>
           <button className="bg-white text-gray-600 text-sm font-semibold px-6 py-2 rounded hover:bg-gray-100 hover:text-black transition">
             View All
           </button>
@@ -141,10 +120,10 @@ const ProductSlider = () => {
 
         <div className="relative">
           {/* Navigation Arrows */}
-          <div className="swiper-button-prev-custom absolute top-[47%] left-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
+          <div className="swiper-button-prev-custom absolute top-[47%] left-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-md cursor-pointer hover:bg-primary">
             <FiChevronLeft />
           </div>
-          <div className="swiper-button-next-custom absolute top-[47%] right-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
+          <div className="swiper-button-next-custom absolute top-[47%] right-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-md cursor-pointer hover:bg-primary">
             <FiChevronRight />
           </div>
 
@@ -205,47 +184,9 @@ const ProductSlider = () => {
             ))}
           </Swiper>
         </div>
-
-        <div>
-          <h1 className="text-xl pt-20 font-semibold">Shop by Price</h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pt-10">
-            {priceRanges.map((range, index) => (
-              <p
-                key={index}
-                className="relative py-3 px-4 text-center rounded-xl cursor-pointer overflow-hidden hover:text-pink-600 bg-pink-600 text-white transition-all duration-700 ease-in-out group"
-              >
-                {/* Hover Overlay */}
-                <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out z-0"></span>
-
-                {/* Text on top */}
-                <span className="relative z-10">{range}</span>
-              </p>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h1 className="text-xl pt-20 font-semibold">Shop by Brand</h1>
-          <div className="py-10">
-            <div className="flex flex-wrap justify-center gap-3 cursor-pointer">
-              {brands.map((brand, index) => (
-                <div
-                  key={index}
-                  className={`${brand.bg} w-[120px] h-[140px] flex items-center justify-center rounded-lg shadow-md`}
-                >
-                  <img
-                    src={brand.image}
-                    alt={brand.name}
-                    className="h-10 object-contain filter invert brightness-0"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
-export default ProductSlider;
+export default ProductSlider8;

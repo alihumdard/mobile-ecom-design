@@ -1,4 +1,3 @@
-import { Phone } from "lucide-react";
 import React, { useState } from "react";
 import {
   FaTimes,
@@ -147,6 +146,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: <FaMotorcycle />,
     },
   ];
+
   const list = [
     {
       title: "Best Mobiles Under 10000",
@@ -201,7 +201,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     },
   ];
 
-   const main = [
+  const main = [
     {
       title: "About",
     },
@@ -233,13 +233,14 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed overflow-y-auto bg-white top-0 left-0 h-full w-[23%] z-50 transform transition-transform duration-300 shadow-xl ${
+      className={`fixed overflow-y-auto bg-white top-0 left-0 h-full z-50 transform transition-transform duration-300 shadow-xl ${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
+      } 
+      w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[23%]`}
     >
       <div className="bg-white h-full flex flex-col">
         {/* HEADER AREA */}
-        <div className="bg-primary text-white px-8 py-4 relative">
+        <div className="bg-primary text-white px-4 sm:px-6 md:px-8 py-4 relative">
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -249,37 +250,37 @@ const Sidebar = ({ isOpen, onClose }) => {
             <FaTimes />
           </button>
 
-          <h2 className="text-2xl font-bold mt-10">Mobile Ecommerce</h2>
-          <p className="text-sm text-white/80 mt-1">
+          <h2 className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 md:mt-10">Mobile Ecommerce</h2>
+          <p className="text-xs sm:text-sm text-white/80 mt-1">
             Explore products & features
           </p>
 
           <div className="pt-3">
-            <button className="w-1/2 bg-white text-primary font-semibold text-sm px-4 py-2 rounded-lg hover:bg-blue-100 transition">
+            <button className="w-full sm:w-1/2 bg-white text-primary font-semibold text-sm px-4 py-2 rounded-lg hover:bg-blue-100 transition">
               Log In
             </button>
           </div>
 
-          <div className="space-y-4 py-4">
-            <div className="flex items-center gap-3 text-white cursor-pointer transition-all duration-200 hover:translate-x-1">
-              <FaTruck className="text-lg" />
-              <p className="text-sm font-medium">Tracking my order</p>
+          <div className="space-y-3 sm:space-y-4 py-3 sm:py-4">
+            <div className="flex items-center gap-2 sm:gap-3 text-white cursor-pointer transition-all duration-200 hover:translate-x-1">
+              <FaTruck className="text-base sm:text-lg" />
+              <p className="text-xs sm:text-sm font-medium">Tracking my order</p>
             </div>
-            <div className="flex items-center gap-3 text-white cursor-pointer transition-all duration-200 hover:translate-x-1">
-              <FaExclamationCircle className="text-lg" />
-              <p className="text-sm font-medium">Launch a Complaint</p>
+            <div className="flex items-center gap-2 sm:gap-3 text-white cursor-pointer transition-all duration-200 hover:translate-x-1">
+              <FaExclamationCircle className="text-base sm:text-lg" />
+              <p className="text-xs sm:text-sm font-medium">Launch a Complaint</p>
             </div>
           </div>
         </div>
 
         {/* CATEGORY CONTENT (SCROLLABLE) */}
-        <div className="flex-1 p-8">
-          <p className="text-sm text-gray-500 mb-4 font-semibold">Categories</p>
-          <div className="space-y-3">
+        <div className="flex-1 p-4 sm:p-6 md:p-8">
+          <p className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4 font-semibold">Categories</p>
+          <div className="space-y-2 sm:space-y-3">
             {categories.map((cat, index) => (
               <div key={index} className="rounded-md">
                 <div
-                  className="flex justify-between items-center cursor-pointer text-gray-600 font-medium hover:text-black"
+                  className="flex justify-between items-center cursor-pointer text-gray-600 font-medium hover:text-black text-sm sm:text-base"
                   onClick={() => toggleCategory(index)}
                 >
                   <div className="flex items-center gap-2">
@@ -289,49 +290,63 @@ const Sidebar = ({ isOpen, onClose }) => {
                   {expanded === index ? <FaChevronUp /> : <FaChevronDown />}
                 </div>
                 {expanded === index && (
-                  <div className="flex flex-col px-5 py-3 mt-3 rounded-md bg-gray-50 shadow-sm transition duration-300 ease-in-out">
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600  hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item1}
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600 hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item2}
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600 hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item3}
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600 hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item4}
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600 hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item5}
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600 hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item6}
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-600 hover:bg-gray-100 px-3 py-2 rounded font-medium transition-all duration-200 cursor-pointer"
-                    >
-                      {cat.item7}
-                    </a>
+                  <div className="flex flex-col px-3 sm:px-4 md:px-5 py-2 sm:py-3 mt-2 sm:mt-3 rounded-md bg-gray-50 shadow-sm transition duration-300 ease-in-out">
+                    {cat.item1 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item1}
+                      </a>
+                    )}
+                    {cat.item2 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item2}
+                      </a>
+                    )}
+                    {cat.item3 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item3}
+                      </a>
+                    )}
+                    {cat.item4 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item4}
+                      </a>
+                    )}
+                    {cat.item5 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item5}
+                      </a>
+                    )}
+                    {cat.item6 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item6}
+                      </a>
+                    )}
+                    {cat.item7 && (
+                      <a
+                        href="#"
+                        className="text-xs sm:text-sm text-gray-600 hover:bg-gray-100 px-2 sm:px-3 py-1 sm:py-2 rounded font-medium transition-all duration-200 cursor-pointer"
+                      >
+                        {cat.item7}
+                      </a>
+                    )}
                   </div>
                 )}
               </div>
@@ -340,15 +355,15 @@ const Sidebar = ({ isOpen, onClose }) => {
         </div>
 
         {/* popular list */}
-        <div className="p-8 bg-white rounded-md shadow-md">
-          <p className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">
+        <div className="p-4 sm:p-6 md:p-8 bg-white rounded-md shadow-md">
+          <p className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 border-b pb-2">
             Popular List
           </p>
 
           <div className="space-y-1">
             {list.map((key, index) => (
               <div key={index}>
-                <p className="text-xs text-gray-700 hover:text-white hover:bg-primary p-2 mr-16 border border-gray-300 rounded-md cursor-pointer font-medium">
+                <p className="text-xs text-gray-700 hover:text-white hover:bg-primary p-1 sm:p-2 mr-8 sm:mr-12 md:mr-16 border border-gray-300 rounded-md cursor-pointer font-medium">
                   {key.title}
                 </p>
               </div>
@@ -356,15 +371,15 @@ const Sidebar = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        <div className="p-8 bg-white rounded-md shadow-md">
-          <p className="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">
-            Popular List
+        <div className="p-4 sm:p-6 md:p-8 bg-white rounded-md shadow-md">
+          <p className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 border-b pb-2">
+            Company Info
           </p>
 
           <div className="space-y-1">
             {main.map((key, index) => (
               <div key={index}>
-                <p className="text-xs text-gray-700 p-2 mr-20 rounded-md cursor-pointer font-medium">
+                <p className="text-xs text-gray-700 p-1 sm:p-2 mr-12 sm:mr-16 md:mr-20 rounded-md cursor-pointer font-medium">
                   {key.title}
                 </p>
               </div>
