@@ -10,3 +10,15 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# mobile-ecom-design-rect
+Intial pages
+1. landing page 
+2. categories
+3. product detail page
+4. about us
+5. contact us
+6. privacy -> all minor page
+7. compair page
+8. check out page
+9. auth pages
+10. blogs
