@@ -7,7 +7,7 @@ import { FaStar } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const ProductSlider8 = () => {
-  const products = [
+   const products = [
     {
       title: "Infinix Zero flip",
       price: 104999,
@@ -108,10 +108,10 @@ const ProductSlider8 = () => {
 
   return (
     <div className="">
-      <div className="relative py-10 px-40 bg-[url('/images/bg-1.png')] bg-cover bg-center mt-10">
-        <div className="mb-6 flex justify-between">
-          <h1 className="text-white text-xl font-bold">
-           Latest Smart Watches
+      <div className="relative py-10 px-4 sm:px-6 lg:px-40 bg-[url('/images/bg-1.png')] bg-cover bg-center mt-10">
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between">
+          <h1 className="text-white text-xl font-bold mb-4 sm:mb-0">
+            Latest Smart Watches
           </h1>
           <button className="bg-white text-gray-600 text-sm font-semibold px-6 py-2 rounded hover:bg-gray-100 hover:text-black transition">
             View All
@@ -133,7 +133,7 @@ const ProductSlider8 = () => {
               prevEl: ".swiper-button-prev-custom",
               nextEl: ".swiper-button-next-custom",
             }}
-            slidesPerView={4}
+            slidesPerView={1}
             spaceBetween={20}
             breakpoints={{
               640: { slidesPerView: 1 },

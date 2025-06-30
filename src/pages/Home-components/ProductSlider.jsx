@@ -121,91 +121,89 @@ const ProductSlider = () => {
     { name: "Realme", image: "/images/brand-7.svg", bg: "bg-[#FFD200]" },
     { name: "Itel", image: "/images/brand-8.svg", bg: "bg-[#FD004D]" },
     { name: "Apple", image: "/images/brand-9.svg", bg: "bg-[#0A0F17]" },
-    // { name: "Nokia", image: "/images/brand-10.svg", bg: "bg-[#0057FF]" },
   ];
 
-  // Split products into chunks of 2 for 2 rows
   const chunkedProducts = [];
   for (let i = 0; i < products.length; i += 2) {
     chunkedProducts.push(products.slice(i, i + 2));
   }
 
   return (
-    <div>
-      <div className="relative py-10 px-40 bg-[url('/images/bg-3.png')] bg-cover bg-center mt-10">
+    <div className="w-full">
+      <div className="relative py-10 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 bg-[url('/images/bg-3.png')] bg-cover bg-center mt-10">
         <div className="mb-6 text-end">
-          <button className="bg-white text-gray-600 text-sm font-semibold px-6 py-2 rounded hover:bg-gray-100 hover:text-black transition">
+          <button className="bg-white text-gray-600 text-sm font-semibold px-4 py-2 rounded hover:bg-gray-100 hover:text-black transition">
             View All
           </button>
         </div>
 
-        <div className="relative">
-          {/* Navigation Arrows */}
-          <div className="swiper-button-prev-custom absolute top-[47%] left-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
-            <FiChevronLeft />
-          </div>
-          <div className="swiper-button-next-custom absolute top-[47%] right-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
-            <FiChevronRight />
-          </div>
-
-          <Swiper
-            modules={[Navigation]}
-            navigation={{
-              prevEl: ".swiper-button-prev-custom",
-              nextEl: ".swiper-button-next-custom",
-            }}
-            slidesPerView={4}
-            spaceBetween={20}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 },
-            }}
-            loop={true}
-          >
-            {chunkedProducts.map((group, index) => (
-              <SwiperSlide key={index}>
-                <div className="grid grid-rows-2 gap-4 cursor-pointer">
-                  {group.map((product, i) => (
-                    <div
-                      key={i}
-                      className="bg-white p-4 rounded-md shadow hover:shadow-lg transition-all relative"
-                    >
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-40 object-contain mb-3"
-                      />
-                      <img
-                        src="/images/season-logo.png"
-                        alt="sale badge"
-                        className="absolute top-2 right-2 w-12 h-12"
-                      />
-                      <h3 className="text-sm font-semibold text-gray-800 mb-1">
-                        {product.title}
-                      </h3>
-                      <div className="flex items-center gap-1 text-sm text-yellow-500 mb-1">
-                        <FaStar /> {product.rating} ({product.reviews} Reviews)
-                      </div>
-                      <div className="text-lg font-bold text-gray-900">
-                        Rs {product.price.toLocaleString()}
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <del className="text-sm text-gray-400">
-                          Rs {product.oldPrice.toLocaleString()}
-                        </del>
-                        <span className="text-xs bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">
-                          {product.discount}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        {/* Navigation Arrows */}
+        <div className="swiper-button-prev-custom absolute top-[19%] sm:top-[27.5%] lg:top-[31.5%] -translate-y-1/2 left-2 sm:left-4 md:left-8 lg:left-10 xl:left-36 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary transition">
+          <FiChevronLeft />
+        </div>
+        <div className="swiper-button-next-custom absolute top-[19%] lg:top-[31.5%] sm:top-[27.5%] -translate-y-1/2 right-2 sm:right-4 md:right-8 lg:right-10 xl:right-36 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary transition">
+          <FiChevronRight />
         </div>
 
+        {/* Swiper */}
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            prevEl: ".swiper-button-prev-custom",
+            nextEl: ".swiper-button-next-custom",
+          }}
+          slidesPerView={1}
+          spaceBetween={20}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
+          }}
+          loop={true}
+        >
+          {chunkedProducts.map((group, index) => (
+            <SwiperSlide key={index}>
+              <div className="grid grid-rows-2 gap-4">
+                {group.map((product, i) => (
+                  <div
+                    key={i}
+                    className="bg-white p-4 rounded-md shadow hover:shadow-lg transition-all relative"
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full h-40 sm:h-48 object-contain mb-3"
+                    />
+                    <img
+                      src="/images/season-logo.png"
+                      alt="sale badge"
+                      className="absolute top-2 right-2 w-10 h-10 sm:w-12 sm:h-12"
+                    />
+                    <h3 className="text-sm font-semibold text-gray-800 mb-1">
+                      {product.title}
+                    </h3>
+                    <div className="flex items-center gap-1 text-sm text-yellow-500 mb-1">
+                      <FaStar /> {product.rating} ({product.reviews} Reviews)
+                    </div>
+                    <div className="text-lg font-bold text-gray-900">
+                      Rs {product.price.toLocaleString()}
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <del className="text-sm text-gray-400">
+                        Rs {product.oldPrice.toLocaleString()}
+                      </del>
+                      <span className="text-xs bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">
+                        {product.discount}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* Shop by Price */}
         <div>
           <h1 className="text-xl pt-20 font-semibold">Shop by Price</h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pt-10">
@@ -214,16 +212,14 @@ const ProductSlider = () => {
                 key={index}
                 className="relative py-3 px-4 text-center rounded-xl cursor-pointer overflow-hidden hover:text-pink-600 bg-pink-600 text-white transition-all duration-700 ease-in-out group"
               >
-                {/* Hover Overlay */}
                 <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out z-0"></span>
-
-                {/* Text on top */}
                 <span className="relative z-10">{range}</span>
               </p>
             ))}
           </div>
         </div>
 
+        {/* Shop by Brand */}
         <div>
           <h1 className="text-xl pt-20 font-semibold">Shop by Brand</h1>
           <div className="py-10">

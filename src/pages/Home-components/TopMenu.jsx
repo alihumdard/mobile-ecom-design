@@ -4,6 +4,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import URLS from "../../config/urls.config";
+import { Link } from "react-router-dom";
 
 const TopMenu = () => {
   const menu = [
@@ -18,19 +20,28 @@ const TopMenu = () => {
   ];
 
   return (
-    <div className="w-full shadow-sm bg-white">
-      <div className="relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-4">
+    <div className="w-full shadow-sm bg-white relative">
+      {/* Navigation Buttons with updated IDs */}
+      <button className="topmenu-button-prev lg:ml-48 absolute top-1/2 -translate-y-1/2 left-2 z-10 bg-white p-2 rounded-lg shadow hover:bg-gray-100">
+        <FiChevronLeft size={20} />
+      </button>
+      <button className="topmenu-button-next absolute lg:mr-48 top-1/2 -translate-y-1/2 right-2 z-10 bg-white p-2 rounded-lg shadow hover:bg-gray-100">
+        <FiChevronRight size={20} />
+      </button>
+
+      {/* Swiper Content */}
+      <div className="px-8 py-4 lg:px-60">
         <Swiper
           slidesPerView={2.5}
           spaceBetween={10}
           navigation={{
-            nextEl: ".swiper-button-next-custom",
-            prevEl: ".swiper-button-prev-custom",
+            nextEl: ".topmenu-button-next",
+            prevEl: ".topmenu-button-prev",
           }}
           modules={[Navigation]}
           className="mySwiper"
           breakpoints={{
-            320: {slidesPerView: 3},
+            320: { slidesPerView: 3 },
             480: { slidesPerView: 3 },
             640: { slidesPerView: 4 },
             768: { slidesPerView: 5 },
@@ -40,7 +51,7 @@ const TopMenu = () => {
         >
           {menu.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center text-center group cursor-pointer">
+              <Link to={URLS.Category} className="flex flex-col items-center text-center group cursor-pointer">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -49,7 +60,7 @@ const TopMenu = () => {
                 <p className="text-sm text-gray-600 mt-2 font-medium whitespace-nowrap">
                   {item.name}
                 </p>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

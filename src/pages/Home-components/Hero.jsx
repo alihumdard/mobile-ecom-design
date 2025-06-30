@@ -52,10 +52,6 @@ const Hero = () => {
           ))}
         </Swiper>
       </div>
-
-      <div className="px-28 py-10 cursor-pointer">
-        <img src="/images/image-1.png" alt="" />
-      </div>
     </div>
   );
 };

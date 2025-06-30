@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { FaStar } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const ProductSlider3 = () => {
+const ProductSlider4 = () => {
   const products = [
     {
       title: "Infinix Zero flip",
@@ -15,7 +15,7 @@ const ProductSlider3 = () => {
       discount: "55% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-1.webp",
+      image: "/images/air-1.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -24,7 +24,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-2.webp",
+      image: "/images/air-2.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -33,7 +33,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-3.webp",
+      image: "/images/air-3.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -42,7 +42,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-4.webp",
+      image: "/images/air-4.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -51,7 +51,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-5.webp",
+      image: "/images/air-5.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -60,7 +60,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-6.webp",
+      image: "/images/air-6.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -69,7 +69,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-7.webp",
+      image: "/images/air-7.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -78,7 +78,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-8.webp",
+      image: "/images/air-8.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -87,7 +87,7 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-9.webp",
+      image: "/images/air-9.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -96,22 +96,65 @@ const ProductSlider3 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/watch-10.webp",
+      image: "/images/air-10.webp",
+    },
+  ];
+  // products.js
+
+  const productss = [
+    {
+      image:
+        "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=60",
+      title: "Wireless Headphones Pro",
+      rating: 4.8,
+      reviews: 21,
+      price: 8999,
+      oldPrice: 10999,
+      discount: "18% OFF",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=60",
+      title: "Smart Watch Series 5",
+      rating: 4.7,
+      reviews: 18,
+      price: 10499,
+      oldPrice: 12999,
+      discount: "19% OFF",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=60",
+      title: "Bluetooth Speaker Mini",
+      rating: 4.5,
+      reviews: 10,
+      price: 3499,
+      oldPrice: 4999,
+      discount: "30% OFF",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=500&q=60",
+      title: "Portable Camera Lens",
+      rating: 4.6,
+      reviews: 13,
+      price: 6499,
+      oldPrice: 7999,
+      discount: "19% OFF",
     },
   ];
 
-  // Split products into chunks of 2 for 2 rows
   const chunkedProducts = [];
   for (let i = 0; i < products.length; i += 2) {
     chunkedProducts.push(products.slice(i, i + 2));
   }
 
   return (
-    <div className="">
-      <div className="relative py-10 px-40 bg-[url('/images/bg-2.png')] bg-cover bg-center mt-10">
-        <div className="mb-6 flex justify-between">
-          <h1 className="text-white text-xl font-bold">
-           Latest Smart Watches
+    <div className="w-full">
+      <div className="relative py-10 px-4 sm:px-6 lg:px-44 bg-[url('/images/bg-1.png')] bg-cover bg-center">
+        <div className="mb-6 flex flex-col sm:flex-row justify-between items-center">
+          <h1 className="text-white text-lg md:text-xl font-bold mb-4 sm:mb-0">
+            Latest Bluetooth Speakers
           </h1>
           <button className="bg-white text-gray-600 text-sm font-semibold px-6 py-2 rounded hover:bg-gray-100 hover:text-black transition">
             View All
@@ -119,11 +162,10 @@ const ProductSlider3 = () => {
         </div>
 
         <div className="relative">
-          {/* Navigation Arrows */}
-          <div className="swiper-button-prev-custom absolute top-[47%] left-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-md cursor-pointer hover:bg-primary">
+          <div className="swiper-button-prev-custom absolute top-1/2 -translate-y-1/2 left-1 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
             <FiChevronLeft />
           </div>
-          <div className="swiper-button-next-custom absolute top-[47%] right-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-md cursor-pointer hover:bg-primary">
+          <div className="swiper-button-next-custom absolute top-1/2 -translate-y-1/2 right-1 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
             <FiChevronRight />
           </div>
 
@@ -133,11 +175,12 @@ const ProductSlider3 = () => {
               prevEl: ".swiper-button-prev-custom",
               nextEl: ".swiper-button-next-custom",
             }}
-            slidesPerView={4}
+            slidesPerView={1}
             spaceBetween={20}
             breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
+              380: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
               1024: { slidesPerView: 4 },
             }}
             loop={true}
@@ -185,8 +228,45 @@ const ProductSlider3 = () => {
           </Swiper>
         </div>
       </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h1 className="text-2xl font-semibold py-10">
+          <span className="text-red-600">Craziest Deals</span> of the Year
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {productss.map((product, i) => (
+            <div
+              key={i}
+              className="bg-white p-4 rounded-md shadow hover:shadow-lg transition-all relative cursor-pointer"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-40 object-contain mb-3"
+              />
+              <h3 className="text-sm font-semibold text-gray-800 mb-1">
+                {product.title}
+              </h3>
+              <div className="flex items-center gap-1 text-sm text-yellow-500 mb-1">
+                <FaStar /> {product.rating} ({product.reviews} Reviews)
+              </div>
+              <div className="text-lg font-bold text-gray-900 mb-1">
+                Rs {product.price.toLocaleString()}
+              </div>
+              <div className="flex items-center justify-between">
+                <del className="text-sm text-gray-400">
+                  Rs {product.oldPrice.toLocaleString()}
+                </del>
+                <span className="text-xs bg-green-100 text-green-700 font-semibold px-2 py-1 rounded">
+                  {product.discount}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default ProductSlider3;
+export default ProductSlider4;

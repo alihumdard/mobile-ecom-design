@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { FaStar } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const ProductSlider6 = () => {
+const ProductSlider9 = () => {
   const products = [
     {
       title: "Infinix Zero flip",
@@ -15,7 +15,7 @@ const ProductSlider6 = () => {
       discount: "55% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-1.webp",
+      image: "/images/watch-1.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -24,7 +24,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-2.webp",
+      image: "/images/watch-2.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -33,7 +33,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-3.webp",
+      image: "/images/watch-3.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -42,7 +42,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-4.webp",
+      image: "/images/watch-4.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -51,7 +51,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-5.webp",
+      image: "/images/watch-5.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -60,7 +60,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-6.webp",
+      image: "/images/watch-6.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -69,7 +69,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-7.webp",
+      image: "/images/watch-7.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -78,7 +78,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-8.webp",
+      image: "/images/watch-8.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -87,7 +87,7 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-9.webp",
+      image: "/images/watch-9.webp",
     },
     {
       title: "Vivo Y200 4G",
@@ -96,11 +96,10 @@ const ProductSlider6 = () => {
       discount: "11% OFF",
       rating: 4.8,
       reviews: 24,
-      image: "/images/air-10.webp",
+      image: "/images/watch-10.webp",
     },
   ];
 
-  // Split products into chunks of 2 for 2 rows
   const chunkedProducts = [];
   for (let i = 0; i < products.length; i += 2) {
     chunkedProducts.push(products.slice(i, i + 2));
@@ -108,11 +107,9 @@ const ProductSlider6 = () => {
 
   return (
     <div className="">
-      <div className="relative py-10 px-40 bg-[url('/images/bg-3.png')] bg-cover bg-center mt-10">
-        <div className="mb-6 flex justify-between">
-          <h1 className="text-white text-xl font-bold">
-            Latest Wireless Earbuds
-          </h1>
+      <div className="relative py-10 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 bg-[url('/images/bg-1.png')] bg-cover bg-center mt-10">
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <h1 className="text-white text-xl font-bold">Latest Power Banks</h1>
           <button className="bg-white text-gray-600 text-sm font-semibold px-6 py-2 rounded hover:bg-gray-100 hover:text-black transition">
             View All
           </button>
@@ -120,10 +117,10 @@ const ProductSlider6 = () => {
 
         <div className="relative">
           {/* Navigation Arrows */}
-          <div className="swiper-button-prev-custom absolute top-[47%] left-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
+          <div className="swiper-button-prev-custom absolute top-[47%] left-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-md cursor-pointer hover:bg-primary">
             <FiChevronLeft />
           </div>
-          <div className="swiper-button-next-custom absolute top-[47%] right-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-primary">
+          <div className="swiper-button-next-custom absolute top-[47%] right-2 z-10 w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-md cursor-pointer hover:bg-primary">
             <FiChevronRight />
           </div>
 
@@ -133,12 +130,13 @@ const ProductSlider6 = () => {
               prevEl: ".swiper-button-prev-custom",
               nextEl: ".swiper-button-next-custom",
             }}
-            slidesPerView={4}
+            slidesPerView={1}
             spaceBetween={20}
             breakpoints={{
               640: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 },
+              1024: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
             }}
             loop={true}
           >
@@ -154,11 +152,6 @@ const ProductSlider6 = () => {
                         src={product.image}
                         alt={product.title}
                         className="w-full h-40 object-contain mb-3"
-                      />
-                      <img
-                        src="/images/season-logo.png"
-                        alt="sale badge"
-                        className="absolute top-2 right-2 w-12 h-12"
                       />
                       <h3 className="text-sm font-semibold text-gray-800 mb-1">
                         {product.title}
@@ -189,4 +182,4 @@ const ProductSlider6 = () => {
   );
 };
 
-export default ProductSlider6;
+export default ProductSlider9;

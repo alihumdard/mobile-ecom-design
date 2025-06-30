@@ -1,28 +1,32 @@
 import React from 'react'
-import TopMenu from './component/TopMenu'
-import Hero from './component/Hero'
-import ProductSlider from './component/ProductSlider'
-import ProductSlider2 from './component/ProductSlider-2'
-import ProductSlider3 from './component/ProductSlider-3'
-import BestSeller from './component/BestSeller'
-import Reviews from './component/Review'
-import ProductSlider4 from './component/ProductSlider4'
-import ProductSlider5 from './component/ProductSlider5'
-import ProductSlider6 from './component/ProductSlider6'
-import Official from './component/Official'
-import ProductSlider7 from './component/ProductSlider7'
-import ProductSlider8 from './component/ProductSlider8'
-import ReasonsToBuy from './component/Reason'
-import ProductSlider9 from './component/ProductSlider9'
-import ProductSlider10 from './component/ProductSlider10'
-import Recomended from './component/Recomended'
+import TopMenu from './Home-components/TopMenu'
+import Hero from './Home-components/Hero'
+import ProductSlider from './Home-components/ProductSlider'
+import ProductSlider2 from './Home-components/ProductSlider-2'
+import ProductSlider3 from './Home-components/ProductSlider-3'
+import BestSeller from './Home-components/BestSeller'
+import Reviews from './Home-components/Review'
+import ProductSlider4 from './Home-components/ProductSlider4'
+import ProductSlider5 from './Home-components/ProductSlider5'
+import ProductSlider6 from './Home-components/ProductSlider6'
+import Official from './Home-components/Official'
+import ProductSlider7 from './Home-components/ProductSlider7'
+import ProductSlider8 from './Home-components/ProductSlider8'
+import ReasonsToBuy from './Home-components/Reason'
+import ProductSlider9 from './Home-components/ProductSlider9'
+import ProductSlider10 from './Home-components/ProductSlider10'
+import Recomended from './Home-components/Recomended'
+import SummerSale_Banner from './Home-components/SummerSale_Banner'
+import Card_Banner from './Home-components/Card_Banner'
 
 const Home = () => {
   return (
     <div>
       <TopMenu/>
       <Hero/>
+      <SummerSale_Banner/>
       <ProductSlider2/>
+      <Card_Banner/>
       <ProductSlider3/>
       <BestSeller/>
       <ProductSlider/>
