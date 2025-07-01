@@ -1,5 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import URLS from "../../config/urls.config";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -60,7 +62,7 @@ const BestSeller = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* First Big Product */}
-          <div className="bg-white p-4 rounded shadow col-span-1 md:col-span-1 row-span-2">
+          <Link to={URLS.ProductDetail} className="bg-white p-4 rounded shadow col-span-1 md:col-span-1 row-span-2">
             <h3 className="font-semibold mb-4">{products[0].name}</h3>
             <img src={products[0].image} alt={products[0].name} className="w-full h-[80%] object-contain mb-4" />
             <div className="flex justify-between items-center">
@@ -70,7 +72,7 @@ const BestSeller = () => {
               </div>
               <span className="text-green-600 text-sm font-medium">{products[0].discount}% OFF</span>
             </div>
-          </div>
+          </Link>
 
           {/* Remaining Products */}
           {products.slice(1).map((product, index) => (

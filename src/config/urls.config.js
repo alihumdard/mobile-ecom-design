@@ -1,6 +1,7 @@
 const URLS = {
     Home: "/",
-    Category: "/category"
+    Category: "/category",
+    ProductDetail: "/productdetail"
 };
 
 export default URLS;

@@ -18,6 +18,8 @@ import ProductSlider10 from './Home-components/ProductSlider10'
 import Recomended from './Home-components/Recomended'
 import SummerSale_Banner from './Home-components/SummerSale_Banner'
 import Card_Banner from './Home-components/Card_Banner'
+import Features from './Home-components/Features'
+import Brand from './Home-components/Brand'
 
 const Home = () => {
   return (
@@ -34,6 +36,7 @@ const Home = () => {
       <ProductSlider4/>
       <ProductSlider5/>      
       <ProductSlider6/>
+      <Brand/>
       <Official/>
       <ProductSlider7/>
       <ProductSlider8/>
@@ -41,6 +44,7 @@ const Home = () => {
       <ProductSlider9/>
       <ProductSlider10/>
       <Recomended/>
+      <Features/>
     </div>
   )
 }
