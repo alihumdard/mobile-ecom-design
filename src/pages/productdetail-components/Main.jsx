@@ -48,11 +48,13 @@ const Main = () => {
 
   return (
     <div className="bg-slate-100">
-      <div className="bg-slate-100 px-40 py-10 text-lg font-semibold">
+      {/* Section Title */}
+      <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 py-10 text-lg font-semibold">
         <h1>Products That Go Together</h1>
       </div>
 
-      <div className="px-4 sm:px-8 bg-white md:px-16 lg:px-20 xl:px-40 py-6">
+      {/* Products Grid */}
+      <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 bg-white py-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {productss.map((product, i) => (
             <div
@@ -82,57 +84,42 @@ const Main = () => {
           ))}
         </div>
       </div>
+
+      {/* Divider */}
       <div className="bg-slate-100 py-1"></div>
-      {/* features section */}
+
+      {/* Features Section */}
       <Features />
 
-      <div className="w-full mt-4 border-b bg-white py-8 border-gray-200 px-40">
-        <nav className="flex flex-wrap gap-8 text-sm font-medium text-gray-600">
-          <a
-            href="#"
-            className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
-          >
-            Similar Products
-          </a>
-          <a
-            href="#"
-            className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
-          >
-            Highlights
-          </a>
-          <a
-            href="#"
-            className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
-          >
-            Specifications
-          </a>
-          <a
-            href="#"
-            className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
-          >
-            What’s In The Box
-          </a>
-          <a
-            href="#"
-            className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
-          >
-            Installment Plans
-          </a>
-          <a
-            href="#"
-            className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
-          >
-            FAQs
-          </a>
+      {/* Navigation Tabs */}
+      <div className="w-full border-b bg-white py-6 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 border-gray-200">
+        <nav className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 text-sm font-medium text-gray-600">
+          {[
+            "Similar Products",
+            "Highlights",
+            "Specifications",
+            "What’s In The Box",
+            "Installment Plans",
+            "FAQs",
+          ].map((item, idx) => (
+            <a
+              key={idx}
+              href="#"
+              className="pb-2 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-600 transition"
+            >
+              {item}
+            </a>
+          ))}
         </nav>
       </div>
 
+      {/* Specifications Section */}
       <div>
-        <div className="py-6 bg-slate-100 px-40 text-lg font-semibold">
-          <h1>Specfications</h1>
+        <div className="py-6 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 text-lg font-semibold">
+          <h1>Specifications</h1>
         </div>
 
-        <div className="bg-white py-8 px-4 md:px-10">
+        <div className="bg-white py-8 px-4 sm:px-6 md:px-10">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {/* Display */}
             <div>
@@ -167,7 +154,7 @@ const Main = () => {
               <p className="text-xs text-gray-500">Battery</p>
             </div>
 
-            {/* Back Camera */}
+            {/* Camera */}
             <div>
               <img
                 src="/images/detail12.svg"

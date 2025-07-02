@@ -35,14 +35,14 @@ const FAQSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newQuestion.trim()) {
-      // Here you would typically add the question to your state or send to backend
       console.log("New question:", newQuestion);
       setNewQuestion("");
     }
   };
 
   return (
-    <div className=" px-40 py-20 bg-white rounded-lg shadow-sm">
+    <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 py-10 bg-white rounded-lg shadow-sm">
+      {/* FAQ list */}
       <div className="space-y-3 border border-gray-200 rounded-lg p-4">
         {faqs.map((faq, index) => (
           <div
@@ -53,7 +53,7 @@ const FAQSection = () => {
               onClick={() => toggleFAQ(index)}
               className="w-full text-left flex justify-between items-center py-2 focus:outline-none"
             >
-              <span className="font-medium text-gray-800">
+              <span className="font-medium text-gray-800 text-sm sm:text-base">
                 Q. {faq.question}
               </span>
               <svg
@@ -74,7 +74,7 @@ const FAQSection = () => {
             </button>
 
             {activeIndex === index && (
-              <div className="mt-2 text-gray-600 pb-2">
+              <div className="mt-2 text-gray-600 pb-2 text-sm sm:text-base">
                 {faq.answer || "No answer provided yet."}
               </div>
             )}
@@ -82,29 +82,33 @@ const FAQSection = () => {
         ))}
       </div>
 
-      <button className="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none">
+      {/* Show More Button */}
+      <button className="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none text-sm sm:text-base">
         Show More
       </button>
 
-      <h2 className="text-xl font-semibold mb-4 mt-10">Ask a question</h2>
+      {/* Ask a Question */}
+      <h2 className="text-lg sm:text-xl font-semibold mb-4 mt-10">
+        Ask a question
+      </h2>
 
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <div className="relative">
           <input
             type="text"
             value={newQuestion}
             onChange={(e) => setNewQuestion(e.target.value)}
-            placeholder="What would you like to know?"
-            className="w-full p-4 pl-5 pr-32 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent shadow-sm text-gray-700 placeholder-gray-400 transition-all duration-200"
+            placeholder="who can i help you ?"
+            className="w-full p-3 sm:p-4 pl-5 pr-32 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent shadow-sm text-gray-700 placeholder-gray-400 transition-all duration-200 text-sm sm:text-base"
           />
           <button
             type="submit"
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-blue-600 text-white font-medium px-5 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-200 shadow-md"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary hover:bg-blue-600 text-white font-medium px-4 sm:px-5 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-200 shadow-md flex items-center text-sm sm:text-base"
           >
             Ask Question
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2 inline-block"
+              className="h-4 w-4 sm:h-5 sm:w-5 ml-2"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
